@@ -87,6 +87,18 @@ def solve(cost, constraints, x):
 
 
 if __name__ == '__main__':
+    """Example LP
+
+       minimize: x1 + 5 * x2 - 2 * x3
+
+       subject to: x1 +     x2 + x3 <= 4
+                   x1               <= 2
+                                 x3 <= 3
+                        3 * x2 + x3 <= 6
+                        x1, x2, x3  >= 0
+
+       (slack variables added as necessary below to reduce to standard form)
+    """
     coefficients = np.array([
         [1, 1, 1, 1, 0, 0, 0, 4],
         [1, 0, 0, 0, 1, 0, 0, 2],
